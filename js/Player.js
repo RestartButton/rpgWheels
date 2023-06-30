@@ -20,6 +20,11 @@ const Player = function() {
         return coin;
     }
 
+    function move(tabuleiro, id) {
+        if(tabuleiro.hasConn(pos, id))
+            pos = id;
+    }
+
     function addPower(value) {
         power += value
 
@@ -29,14 +34,17 @@ const Player = function() {
     function addItem(player, item) {
         if(item1 == null) {
             item1 = item;
+            item.effect(player)
         } else if (item2 == null) {
             item2 = item;
+            item.effect(player)
         } else if (item3 == null) {
             item3 = item;
+            item.effect(player)
         } else if (item4 == null) {
             item4 = item;
+            item.effect(player)
         }
-        item.effect(player)
     }
 
     function removeItem(player) {

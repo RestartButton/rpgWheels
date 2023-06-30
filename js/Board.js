@@ -62,8 +62,9 @@ const Board = function() {
         else return -1;
     }
 
-    function movePlayer(player, id){
-
+    function hasConn(cur_id, id){
+        return (getNode(cur_id) != -1 
+                && getNode(cur_id).getConn().indexOf(id) != -1)
     }
 
     function addNode(node) {
